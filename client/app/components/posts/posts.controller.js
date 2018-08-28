@@ -23,6 +23,13 @@ class PostsController {
       .catch(err => console.log('error', err));
   }
 
+  searchPost(search) {
+    this.postsService
+      .searchPost(search)
+      .then(res => this.posts = res.data)
+      .catch(err => console.log('error', err));
+  }
+
   save(post) {
     if (post.id) {
       this.updatePost(post);

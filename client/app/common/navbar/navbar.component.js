@@ -2,8 +2,12 @@ import template from './navbar.html';
 import controller from './navbar.controller';
 import './navbar.scss';
 
+const bindings = {
+  searched: '&'
+}
+
 let navbarComponent = {
-  bindings: {},
+  bindings,
   template,
   controller
 };
