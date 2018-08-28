@@ -2,8 +2,12 @@ import template from './postsList.html';
 import controller from './postsList.controller';
 import './postsList.scss';
 
+const bindings = {
+  posts: '<'
+}
+
 let postsListComponent = {
-  bindings: {},
+  bindings,
   template,
   controller
 };

@@ -1,7 +1,5 @@
 class PostsDetailsController {
-  constructor() {
-    this.name = 'postsDetails';
-  }
+  constructor() {}
 }
 
 export default PostsDetailsController;

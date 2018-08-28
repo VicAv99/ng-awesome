@@ -1,6 +1,6 @@
 class PostsListController {
+  posts = [];
   constructor() {
-    this.name = 'postsList';
   }
 }
 

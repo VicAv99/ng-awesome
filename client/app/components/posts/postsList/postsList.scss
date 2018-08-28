@@ -1,3 +1,12 @@
-.postsList {
-  color: red;
+img {
+  width: 64px;
+  height: 64px;
+}
+
+.well {
+  background-image: none;
+  background-color: white;
+  > .media:hover {
+    background-color: whitesmoke;
+  }
 }
