@@ -1,7 +1,8 @@
 <navbar></navbar>
 
 <posts-list posts="$ctrl.posts"
-            selected="$ctrl.selectPost(post)">
+            selected="$ctrl.selectPost(post)"
+            deleted="$ctrl.removePost(id)">
 </posts-list>
 
 <posts-details form="$ctrl.form"

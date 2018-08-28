@@ -4,7 +4,8 @@ import './postsList.scss';
 
 const bindings = {
   posts: '<',
-  selected: '&'
+  selected: '&',
+  deleted: '&'
 }
 
 let postsListComponent = {

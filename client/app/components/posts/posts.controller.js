@@ -23,6 +23,38 @@ class PostsController {
       .catch(err => console.log('error', err));
   }
 
+  save(post) {
+    if (post.id) {
+      this.updatePost(post);
+    } else {
+      this.createPost(post);
+    };
+  }
+
+  createPost(post) {
+    this.postsService
+      .create(post)
+      .then(res => this.getAllPosts())
+      .catch(err => console.log('error', err))
+      .finally(() => this.reset());
+  }
+
+  updatePost(post) {
+    this.postsService
+      .update(post)
+      .then(res => this.getAllPosts())
+      .catch(err => console.log('error', err))
+      .finally(() => this.reset());
+  }
+
+  removePost(postId) {
+    this.postsService
+      .remove(postId)
+      .then(res => this.getAllPosts())
+      .catch(err => console.log('error', err))
+      .finally(() => this.reset());
+  }
+
   handleForm() {
     this.form = {
       id: null,

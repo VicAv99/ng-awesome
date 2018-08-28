@@ -6,6 +6,9 @@
       </a>
     </div>
     <div class="media-body">
+      <span class="badge pull-right" ng-click="$ctrl.deleted({id: post.id})">
+        <div class="glyphicon glyphicon-remove"></div>
+      </span>
       <h3 class="media-heading">{{ post.username }}</h3>
       <h5>{{ post.content }}</h5>
     </div>

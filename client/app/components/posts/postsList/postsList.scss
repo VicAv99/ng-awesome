@@ -6,7 +6,17 @@ img {
 .well {
   background-image: none;
   background-color: white;
-  > .media:hover {
+}
+
+.media {
+  padding: 5px;
+  border-radius: 10px;
+  &:hover {
     background-color: whitesmoke;
   }
+}
+
+.badge {
+  pointer-events: all;
+  cursor: pointer;
 }
