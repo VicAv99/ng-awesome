@@ -3,7 +3,8 @@ import controller from './postsList.controller';
 import './postsList.scss';
 
 const bindings = {
-  posts: '<'
+  posts: '<',
+  selected: '&'
 }
 
 let postsListComponent = {

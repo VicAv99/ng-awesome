@@ -7,8 +7,13 @@ class PostsController {
   }
 
   $onInit() {
-    this.initForm();
+    this.handleForm();
     this.getAllPosts();
+  }
+
+  selectPost(post) {
+    this.selectedPost = Object.assign({}, post);
+    this.form = Object.assign({}, post);
   }
 
   getAllPosts() {
@@ -18,12 +23,17 @@ class PostsController {
       .catch(err => console.log('error', err));
   }
 
-  initForm() {
+  handleForm() {
     this.form = {
       id: null,
       username: '',
       content: ''
     }
+  }
+
+  reset() {
+    this.handleForm();
+    this.selectedPost = {};
   }
 
 }

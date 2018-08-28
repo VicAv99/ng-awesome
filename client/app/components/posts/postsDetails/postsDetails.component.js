@@ -3,7 +3,9 @@ import controller from './postsDetails.controller';
 import './postsDetails.scss';
 
 const bindings = {
-  form: '<'
+  form: '<',
+  selectedPost: '<',
+  cancelled: '&'
 }
 
 let postsDetailsComponent = {

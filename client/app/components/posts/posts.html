@@ -1,6 +1,10 @@
 <navbar></navbar>
 
-<posts-list posts="$ctrl.posts">
+<posts-list posts="$ctrl.posts"
+            selected="$ctrl.selectPost(post)">
 </posts-list>
 
-<posts-details form="$ctrl.form"></posts-details>
+<posts-details form="$ctrl.form"
+               selected-post="$ctrl.selectedPost"
+               cancelled="$ctrl.reset()">
+</posts-details>
