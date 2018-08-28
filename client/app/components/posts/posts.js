@@ -13,8 +13,10 @@ let postsModule = angular
     postsService
   ])
 
-  .config($stateProvider => {
+  .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
+
+    $urlRouterProvider.otherwise('/posts');
 
     $stateProvider.state('posts', {
       url: '/posts',

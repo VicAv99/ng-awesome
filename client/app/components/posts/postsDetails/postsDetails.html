@@ -14,7 +14,7 @@
     ng-model="$ctrl.form.content"></textarea>
   </div>
   <div class="pull-right">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">{{$ctrl.selectedPost.id ? 'Update' : 'Submit'}}</button>
     <button type="button" class="btn btn-warning"
     ng-click="$ctrl.cancelled()">Cancel</button>
   </div>
