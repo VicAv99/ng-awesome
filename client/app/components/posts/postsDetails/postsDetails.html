@@ -1,4 +1,4 @@
-<form class="col-md-4 well">
+<form class="col-md-4 well" ng-submit="$ctrl.saved({post: $ctrl.form})">
   <div class="page-header">
     <h1 ng-if="!$ctrl.selectedPost.id">Create new Post</h1>
     <h1 ng-if="$ctrl.selectedPost.id">Update {{$ctrl.selectedPost.username}}</h1>

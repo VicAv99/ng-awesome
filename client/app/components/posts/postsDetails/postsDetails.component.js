@@ -5,7 +5,8 @@ import './postsDetails.scss';
 const bindings = {
   form: '<',
   selectedPost: '<',
-  cancelled: '&'
+  cancelled: '&',
+  saved: '&'
 }
 
 let postsDetailsComponent = {
