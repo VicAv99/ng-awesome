@@ -1,22 +1,17 @@
 @import '../common';
 
 .navbar {
-  height: 6.5rem;
-  background-color: $primaryColor;
-  padding: 1rem;
+  border-radius: 0;
+  margin: 0;
+}
 
-  .nav-links,
-  .logo {
-    display: inline-block;
-  }
+.navbar-brand {
+  color: white !important;
+}
 
-  .logo {
-    color: $lightTextColor;
-    margin-right: 50%;
-  }
-
-  .nav-links span {
-    color: $lightTextColor;
-    font-size: 1.6rem;
+.hover-links {
+  font-size: 16px;
+  &:hover {
+    font-size: 20px;
   }
 }
