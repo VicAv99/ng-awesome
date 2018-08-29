@@ -3,12 +3,12 @@ class PostsDetailsController {
 
   setValidation(field) {
     return {
-      'has-error': field.$error.required && (field.$dirty || field.$touched)
+      'has-error': field.$error.required && field.$touched
     };
   }
 
   determineValidation(field) {
-    return field.$error.required && (field.$dirty || field.$touched);
+    return field.$error.required && field.$touched;
   }
 }
 
