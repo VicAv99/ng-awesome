@@ -9,11 +9,12 @@ class PostsController {
   $onInit() {
     this.handleForm();
     this.getAllPosts();
+    this.form = {};
   }
 
   selectPost(post) {
     this.selectedPost = Object.assign({}, post);
-    this.form = Object.assign({}, post);
+    this.formdata = Object.assign({}, post);
   }
 
   getAllPosts() {
@@ -31,11 +32,13 @@ class PostsController {
   }
 
   save(post) {
-    if (post.id) {
-      this.updatePost(post);
-    } else {
-      this.createPost(post);
-    };
+    if (this.form.$valid) {
+      if (post.id) {
+        this.updatePost(post);
+      } else {
+        this.createPost(post);
+      };
+    }
   }
 
   createPost(post) {
@@ -63,16 +66,17 @@ class PostsController {
   }
 
   handleForm() {
-    this.form = {
+    this.formdata = {
       id: null,
       username: '',
       content: ''
-    }
+    };
   }
 
   reset() {
     this.handleForm();
     this.selectedPost = {};
+    this.form.$setUntouched();
   }
 
 }

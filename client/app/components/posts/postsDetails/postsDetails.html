@@ -1,21 +1,29 @@
-<form class="col-md-4 well" ng-submit="$ctrl.saved({post: $ctrl.form})">
+<form novalidate name="$ctrl.form"
+      class="col-md-4 well"
+      ng-submit="$ctrl.saved({post: $ctrl.formdata})">
   <div class="page-header">
     <h1 ng-if="!$ctrl.selectedPost.id">Create new Post</h1>
     <h1 ng-if="$ctrl.selectedPost.id">Update {{$ctrl.selectedPost.username}}</h1>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="$ctrl.setValidation($ctrl.form.username)">
     <label for="userName">Username</label>
     <input type="text" class="form-control" id="userName" placeholder="users username"
-    ng-model="$ctrl.form.username">
+    ng-model="$ctrl.formdata.username" ng-required="true" name="username">
+    <div ng-if="$ctrl.determineValidation($ctrl.form.username)" class="help-block">
+      Please provide a username.
+    </div>
   </div>
-  <div class="form-group">
+  <div class="form-group" ng-class="$ctrl.setValidation($ctrl.form.content)">
     <label for="userContent">Content</label>
     <textarea class="form-control" id="userContent" rows="3" placeholder="users content"
-    ng-model="$ctrl.form.content"></textarea>
+    ng-model="$ctrl.formdata.content" ng-required="true" name="content"></textarea>
+    <div ng-if="$ctrl.determineValidation($ctrl.form.content)" class="help-block">
+      Please provide some content.
+    </div>
   </div>
   <div class="pull-right">
     <button type="submit" class="btn btn-primary">{{$ctrl.selectedPost.id ? 'Update' : 'Submit'}}</button>
-    <button type="button" class="btn btn-warning"
+    <button type="button" class="btn btn-danger"
     ng-click="$ctrl.cancelled()">Cancel</button>
   </div>
 </form>
