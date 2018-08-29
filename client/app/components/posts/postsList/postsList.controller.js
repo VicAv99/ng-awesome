@@ -1,7 +1,5 @@
 class PostsListController {
-  posts = [];
-  constructor() {
-  }
+  constructor() {}
 }
 
 export default PostsListController;
